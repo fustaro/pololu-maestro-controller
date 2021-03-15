@@ -4,7 +4,7 @@ Node Pololu Maestro servo controller
 
 USB Chained Mode (confirmed working on Windows 10, RPI 4 and RPI Zero W)
 
-## Create a ServoModel, specific to the brand and model of a particular servo
+### Create a ServoModel, specific to the brand and model of a particular servo
 
 ```
 const servoModel = new ServoModel({
@@ -15,7 +15,7 @@ const servoModel = new ServoModel({
 });
 ```
 
-## Create Servo instances, specific to each servo you want to control
+### Create Servo instances, specific to each servo you want to control
 
 ```
 const servo = new Servo({
@@ -26,27 +26,25 @@ const servo = new Servo({
 });
 ```
 
-## Create your MaestroServoController
+### Create your MaestroServoController
 
 ```
 import { getOrCreateController } from '@fustaro/pololu-maestro-controller';
 
-const controller = getOrCreateController('Maestro_COM4', 'COM4', 16);
+const controller = getOrCreateController(uniqueHardwareName, portName, channels);
+
+//uniqueHardwareName: A unique reference to a given Maestro, e.g. 'Maestro_COM4' 
+//                    The ServoControllerFactory will only ever return a single
+//                    ServoController for a given uniqueHardwareName
+
+//portName: The USB port to find and connect the Maestro on. 
+//          On Windows, this will typically be 'COM1', 'COM2', etc
+//          On RPI, this will typically be '/dev/ttyACM0' or '/dev/ttyUSB0'
+
+//channels: The amount of channels this Maestro supports (6, 12, 18, 24 etc)
 ```
 
-### getOrCreateController(uniqueHardwareName: string, portName: string, channels: number)
-
-uniqueHardwareName: A unique reference to a given Maestro. 
-                    The ServoControllerFactory will only ever return a single
-                    ServoController for a given uniqueHardwareName
-
-portName: The USB port to find and connect the Maestro on. 
-          On Windows, this will typically be COM1, COM2, etc
-          On RPI, this will typically be '/dev/ttyACM0' or '/dev/ttyUSB0'
-
-channels: The amount of channels this Maestro supports (6, 12, 18, 24 etc)
-
-## Run your servo
+### Run your servo
 
 ```
 controller.setAngleDegrees(servo, 40);
