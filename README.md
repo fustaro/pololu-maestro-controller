@@ -31,9 +31,9 @@ const servo = new Servo({
 ### Create your MaestroServoController
 
 ```
-import { getOrCreateController } from '@fustaro/pololu-maestro-controller';
+import { getOrCreateMaestroController } from '@fustaro/pololu-maestro-controller';
 
-const controller = getOrCreateController(uniqueHardwareName, portName, channels);
+const controller = getOrCreateMaestroController(uniqueHardwareName, portName, channels);
 
 //uniqueHardwareName: A unique reference to a given Maestro, e.g. 'Maestro_COM4' 
 //                    The ServoControllerFactory will only ever return a single

@@ -1,11 +1,11 @@
 import PololuMaestro from "pololu-maestro";
-import { ServoControllerFactory, PwmWriter, HardwareInterface, IServoController } from "@fustaro/servo-core";
+import { ServoControllerFactory, PwmWriter, HardwareInterface, IServoController, ServoModel, ServoDirection, Servo } from "@fustaro/servo-core";
 
 interface MaestroServoDriver extends PwmWriter {
     ready: boolean;
 }
  
-export const getOrCreateController = (uniqueHardwareName: string, portName: string, channels: number): IServoController => {
+export const getOrCreateMaestroController = (uniqueHardwareName: string, portName: string, channels: number): IServoController => {
     let controller = ServoControllerFactory.get(uniqueHardwareName);
 
     if(!controller){
