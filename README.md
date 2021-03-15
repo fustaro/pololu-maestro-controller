@@ -4,6 +4,8 @@ Node Pololu Maestro servo controller
 
 USB Chained Mode (confirmed working on Windows 10, RPI 4 and RPI Zero W)
 
+```npm install @fustaro/pololu-maestro-controller```
+
 ### Create a ServoModel, specific to the brand and model of a particular servo
 
 ```
