@@ -13,7 +13,7 @@ const servoModel = new ServoModel({
     pwmRange: { min: 1000, natural: 1500, max: 2000 },
     angleRange: { min: -60, natural: 0, max: 60 },
     speed: 0.1,
-    servoDirecton: ServoDirection.HIGHER_PWM_CLOCKWISE
+    servoDirection: ServoDirection.HIGHER_PWM_CLOCKWISE
 });
 ```
 

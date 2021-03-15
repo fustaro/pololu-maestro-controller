@@ -13,7 +13,7 @@ export const getOrCreateController = (uniqueHardwareName: string, portName: stri
 
         const servoDriver: MaestroServoDriver = {
             ready: false,
-            writePwm(channel: number, pwm: number, callback?: Function): void {
+            writePwm: (channel: number, pwm: number, callback?: Function): void => {
                 if(servoDriver.ready) pololuMaestro.setTarget(channel, pwm, callback);
             }
         }
