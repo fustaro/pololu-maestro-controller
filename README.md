@@ -51,7 +51,6 @@ const controller = getOrCreateMaestroController(uniqueHardwareName, portName, ch
 ```
 controller.setAngleDegrees(servo, 40);
 ```
-```
 
 ### Sample scripts
 
