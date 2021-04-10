@@ -46,6 +46,23 @@ const controller = getOrCreateMaestroController(uniqueHardwareName, portName, ch
 //channels: The amount of channels this Maestro supports (6, 12, 18, 24 etc)
 ```
 
+Note on Raspberry Pi running multiple Pololu Maestros from multiple USB ports, you may need
+to reference the ports by hardware ID, for example;
+
+```
+const port_m1 = '/dev/serial/by-id/usb-Pololu_Corporation_Pololu_Mini_Maestro_12-Channel_USB_Servo_Controller_********-if00';
+const port_m2 = '/dev/serial/by-id/usb-Pololu_Corporation_Pololu_Mini_Maestro_12-Channel_USB_Servo_Controller_********-if00';
+
+const servoController_m1 = getOrCreateMaestroController('Maestro_M1', port_m1, 12);
+const servoController_m2 = getOrCreateMaestroController('Maestro_M2', port_m2, 12);
+```
+
+To get your unique hardware ids, just plug in your Maestros and run;
+
+```
+ls /dev/serial/by-id/
+```
+
 ### Run your servo
 
 ```
