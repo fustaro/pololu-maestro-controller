@@ -5,11 +5,11 @@ interface MaestroServoDriver extends PwmWriter {
     ready: boolean;
 }
  
-export const getOrCreateMaestroController = (uniqueHardwareName: string, portName: string, channels: number): IServoController => {
+export const getOrCreateMaestroController = (uniqueHardwareName: string, portName: string, channels: number, baudRate: number | false = false, debug: boolean = false): IServoController => {
     let controller = ServoControllerFactory.get(uniqueHardwareName);
 
     if(!controller){
-        const pololuMaestro = new PololuMaestro(portName, false);
+        const pololuMaestro = new PololuMaestro(portName, baudRate, debug);
 
         const servoDriver: MaestroServoDriver = {
             ready: false,

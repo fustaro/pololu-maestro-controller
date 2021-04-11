@@ -1,6 +1,6 @@
 {
   "name": "@fustaro/pololu-maestro-controller",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "fustaro",
   "description": "Pololu Maestro node servo controller",
   "scripts": {
@@ -13,7 +13,7 @@
   ],
   "main": "dist/MaestroServoController.js",
   "dependencies": {
-    "@fustaro/servo-core": "^1.0.6",
+    "@fustaro/servo-core": "^1.0.7",
     "@fustaro/ticker": "^1.0.0",
     "pololu-maestro": "github:fustaro/node-pololumaestro"
   },
