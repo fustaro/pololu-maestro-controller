@@ -1,5 +1,5 @@
 import PololuMaestro from "pololu-maestro";
-import { ServoControllerFactory, PwmWriter, HardwareInterface, IServoController, ServoModel, ServoDirection, Servo } from "@fustaro/servo-core";
+import { ServoControllerFactory, PwmWriter, HardwareInterface, IServoController } from "@fustaro/servo-core";
 
 interface MaestroServoDriver extends PwmWriter {
     ready: boolean;
