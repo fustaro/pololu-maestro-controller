@@ -13,7 +13,7 @@
   ],
   "main": "dist/MaestroServoController.js",
   "dependencies": {
-    "@fustaro/servo-core": "^2.0.1",
+    "@fustaro/servo-core": "^6.1.1",
     "@fustaro/ticker": "^1.0.0",
     "pololu-maestro": "github:fustaro/node-pololumaestro"
   },
